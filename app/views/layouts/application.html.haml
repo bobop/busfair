@@ -23,6 +23,12 @@
     .small-12.columns.panel.callout
       %h2.subheader 
         = link_to "Bus Fair", root_url
+  - if notice
+    .alert-box.success
+      = notice
+  - if alert
+    .alert-box.alert
+      = alert
   #content.row.centered
     .small-12.columns
       = yield

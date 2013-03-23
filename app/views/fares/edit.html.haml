@@ -1,2 +1,11 @@
-%h1 Fares#edit
-%p Find me in app/views/fares/edit.html.haml
+%h3 Thanks for adding your fare
+- if @fare.end_bus_stop.present?
+  / AVERAGE FARE
+%p Please could you give us a couple more details about your Journey?
+.row.panel
+  .small-12.columns
+    %p Find out if your bus was early or late:
+    = simple_form_for @fare do |f|
+      %p= f.input :start_time, as: :time, label: "Journey Start Time (printed on ticket)"
+      %p= f.input :end_time, as: :time, label: "Journey End Time"
+      %p= f.submit 'Save Times', class: 'button expand'
