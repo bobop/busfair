@@ -26,7 +26,7 @@ class FaresController < ApplicationController
   def update
     @fare = Fare.find(params[:id])
     if @fare.update_attributes(params[:fare])
-      redirect_to fare_url(@fare)
+      redirect_to fare_url(@fare), notice: "Thanks for adding your Fare! You're making the world a better place!"
     else
       render :edit
     end
