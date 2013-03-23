@@ -1,0 +1,12 @@
+%h3 Add Your Fare
+= simple_form_for @fare do |f|
+  %p= f.input :route
+  %p= f.input :operator
+  .row.collapse
+    = f.label :amount
+    .small-2.columns
+      %span.prefix £
+    .small-10.columns= f.input :amount, label: false
+  %p= f.input :start_bus_stop
+  %p= f.input :end_bus_stop
+  %p= f.submit "Add My Fare", class: 'button expand'
